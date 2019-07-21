@@ -1,13 +1,40 @@
+* {
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  color: #333;
+}
+
 h2, h3 {
   width: 100%;
-} 
+  text-align: center;
+}
 
-.o_pickup-container {
+
+a {
+  text-decoration: none;
+}
+
+.o_white {
   background: #f5f5f5;
+  padding-bottom: 50px;
+}
+
+.o_pickup-head {
+  margin: 30px 0 0;
 }
 
 .o_items-box {
   margin: 0 80px;
+}
+
+.o_items-box__title {
+  font-size: 20px;
+  color: #0099e8;
+  margin-top: 30px;
+}
+
+.o_items-box__title:hover {
+  text-decoration: underline;
+  opacity: 0.7;
 }
 
 .o_items-box__content {
@@ -25,10 +52,12 @@ h2, h3 {
 .o_item__body {
   height: 80px;
   padding: 10px;
+  font-weight: normal;
 }
 
 .o_item__body--title {
   height: 70%;
+  text-align: left;
 }
 
 .o_item__body--bottom {
@@ -37,6 +66,22 @@ h2, h3 {
   height: 30%;
 }
 
+.o_item__body--bottom--price {
+  font-weight: bold;
+}
+
 .o_items-box__view-all {
   text-align: right;
+  font-size: 16px;
+  font-weight: normal;
+  margin-top: 10px;
+}
+
+.o_items-box__view-all a {
+  color: #0099e8;
+}
+
+.o_items-box__view-all a:hover {
+  text-decoration: underline;
+  opacity: 0.7;
 }
