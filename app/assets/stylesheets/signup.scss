@@ -1,0 +1,100 @@
+.k_su_single-container {
+  height: 100%;
+  weight: 100%;
+  background-color: #f5f5f5;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+  color: #333;   
+  .k_su_header {
+    height: 128px;
+    with: 100%;
+    &__title {
+      text-align: center;
+      line-height: 128px;
+    }
+  }
+  .k_su_wrapper {
+    height: 384px;
+    width: 100%;
+    .k_su_section {
+      height: 100%;
+      width: 700px;
+      background-color: white;
+      margin: 0 auto;
+      &__header {
+        height: 97px;
+        font-size: 22px;
+        text-align: center;
+        line-height: 97px;
+      }
+      &__inner {
+        height: 287px;
+        width: 343px;
+        margin: 0 auto;
+        padding: 40px 40px 64px;
+        border-top: 1px solid #f5f5f5;
+        &--mail-regi {
+          height: 50px;
+          width: 100%;
+          line-height: 50px;
+          text-align: center;
+          background-color: #ea352d;
+          border-radius: 4px;
+          display: block;
+          text-decoration: none;
+          color: #fff;
+        }
+        &--facebook-regi {
+          height: 50px;
+          width: 343px;
+          line-height: 50px;
+          text-align: center;
+          background-color: #385185;
+          border-radius: 4px;
+          margin: 16px 0 0;
+          display: block;
+          text-decoration: none;
+          color: #fff;
+        }
+        &--google-regi {
+          height: 50px;
+          width: 343px;
+          line-height: 50px;
+          text-align: center;
+          background-color: #fff;
+          border-radius: 4px;
+          margin: 16px 0 0;
+          display: block;
+          text-decoration: none;
+          border: #979797 solid 1px;
+          color: #333;
+        }
+      }
+    }
+  }
+  .k_su_footer {
+    height: 348px;
+    width: 100%;
+    &__inner {
+      height: 100%;
+      width: 456px;
+      margin: 100px auto;
+      text-align: center;
+      &--nav {
+        width: 100%;
+        display: flex;
+        list-style: none;
+        &-li {
+          margin: 0 5px;
+          &-a {
+            text-decoration: none;
+            color: #333333;
+            font-size: 12px;       
+          }
+        }
+      }
+      &--logo {
+      }
+    }
+  }
+}
