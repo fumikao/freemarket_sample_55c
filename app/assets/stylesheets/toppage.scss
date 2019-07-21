@@ -1,0 +1,42 @@
+h2, h3 {
+  width: 100%;
+} 
+
+.o_pickup-container {
+  background: #f5f5f5;
+}
+
+.o_items-box {
+  margin: 0 80px;
+}
+
+.o_items-box__content {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.o_item {
+  margin-left: 20px;
+  background: #fff;
+  font-size: 16px;
+}
+
+.o_item__body {
+  height: 80px;
+  padding: 10px;
+}
+
+.o_item__body--title {
+  height: 70%;
+}
+
+.o_item__body--bottom {
+  display: flex;
+  justify-content: space-between;
+  height: 30%;
+}
+
+.o_items-box__view-all {
+  text-align: right;
+}
