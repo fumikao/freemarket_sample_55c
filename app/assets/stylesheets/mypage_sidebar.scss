@@ -1,0 +1,60 @@
+
+.n_side{
+  float: left;
+  display: block;
+  min-height: 48px;
+  width: 280px;
+  margin-left: 40px;
+  border-style: solid;
+  border-width: 0;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  .n_side_bar{
+    &__mypage{
+      .n_list{
+        &__item.active{
+          text-decoration: none;
+          background: #eee;
+          color: #333;
+          font-size: 14px;
+          font-weight: 600;
+          display: block;
+          position: relative;
+          padding: 16px;
+          .n_icon{
+            color: #333;
+            float: right;
+          }
+        }
+        //&__litemと&__itemとの違いは下線の有無のみ
+        &__litem{
+          text-decoration: none;
+          border-bottom: 1px solid #eee;
+          color: #333;
+          font-size: 14px;
+          position: relative;
+          display: block;
+          padding: 16px;
+          .n_icon{
+            color: #ccc;
+            float: right;
+          }
+        }
+        &__item{
+          text-decoration: none;
+          color: #333;
+          font-size: 14px;
+          position: relative;
+          display: block;
+          padding: 16px;
+          .n_icon{
+            color: #ccc;
+            float: right;
+          }
+        }
+      }
+    }
+    &__head{
+      font-weight: 600;
+    }
+  }
+}
