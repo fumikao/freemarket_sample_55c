@@ -38,24 +38,37 @@
               お名前
             .k_su_section4__inner--form-span
               必須
-            = f.text_field :lastname, class: "k_su_section4__inner--form-input", placeholder: "例）山田"
-            = f.text_field :firstname, class: "k_su_section4__inner--form-input", placeholder: "例）太郎"  
-            
+            = f.text_field :lastname, class: "k_su_section4__inner--form-input k_form", placeholder: "例）山田"
+            = f.text_field :firstname, class: "k_su_section4__inner--form-input k_form", placeholder: "例）太郎"  
+            .error_zone
+              %p.error_message
+                = @user.errors.full_messages_for(:lastname)[0]
+              %p.error_message
+                = @user.errors.full_messages_for(:firstname)[0]
+              
           .k_su_section4__inner--form2
             .k_su_section4__inner--form2-label
               お名前カナ
             .k_su_section4__inner--form2-span
               必須
-            = f.text_field :lastname_kana, class: "k_su_section4__inner--form2-input", placeholder: "例）ヤマダ"
-            = f.text_field :firstname_kana, class: "k_su_section4__inner--form2-input", placeholder: "例）タロウ"
-            
+            = f.text_field :lastname_kana, class: "k_su_section4__inner--form2-input k_form", placeholder: "例）ヤマダ"
+            = f.text_field :firstname_kana, class: "k_su_section4__inner--form2-input k_form", placeholder: "例）タロウ"
+            .error_zone
+              %p.error_message
+                = @user.errors.full_messages_for(:lastname_kana)[0]
+              %p.error_message
+                = @user.errors.full_messages_for(:firstname_kana)[0]
+
           = f.fields_for :address do |i|
             .k_su_section4__inner--form3
               .k_su_section4__inner--form3-label
                 郵便番号
               .k_su_section4__inner--form3-span
                 必須
-              = i.text_field :postal_code, class: "k_su_section4__inner--form3-input", placeholder: "例）123-4567"
+              = i.text_field :postal_code, class: "k_su_section4__inner--form3-input k_form", placeholder: "例）123-4567"
+              .error_zone
+                %p.error_message
+                  = @address.errors.full_messages_for(:postal_code)[0]
               
             .k_su_section4__inner--form3
               .k_su_section4__inner--form3-label
@@ -63,6 +76,9 @@
               .k_su_section4__inner--form3-span
                 必須
               = i.collection_select :prefecture_id, Prefecture.all, :id, :name
+              .error_zone
+                %p.error_message
+                  = @address.errors.full_messages_for(:prefecture_id)[0]
               
             .k_su_section4__inner--form3
               .k_su_section4__inner--form3-label
@@ -70,6 +86,9 @@
               .k_su_section4__inner--form3-span
                 必須
               = i.text_field :city, class: "k_su_section4__inner--form3-input", placeholder: "例）横浜市緑区"
+              .error_zone
+                %p.error_message
+                  = @address.errors.full_messages_for(:city)[0]
             
             .k_su_section4__inner--form3
               .k_su_section4__inner--form3-label
@@ -77,6 +96,9 @@
               .k_su_section4__inner--form3-span
                 必須
               = i.text_field :address_number, class: "k_su_section4__inner--form3-input", placeholder: "例）青山1-1-1"
+              .error_zone
+                %p.error_message
+                  = @address.errors.full_messages_for(:address_number)[0]
               
             .k_su_section4__inner--form4
               .k_su_section4__inner--form4-label

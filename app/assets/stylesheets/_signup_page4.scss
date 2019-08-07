@@ -1,10 +1,8 @@
 .k_su_wrapper4 {
-  height: 1430px;
   width: 100%;
 }
 
 .k_su_section4 {
-  height: 100%;
   width: 700px;
   background-color: white;
   margin: 0 auto;
@@ -17,13 +15,11 @@
     border-bottom: 1px solid #f5f5f5;
   }
   &__inner {
-    height: 1333px;
     width: 343px;
     margin: 0 auto;
     padding: 40px 0 64px;
     &--form {
       width: 343px;
-      height: 150px;
       &-label {
         display: inline;
         font-weight: bold;
@@ -53,7 +49,6 @@
     &--form2 {
       margin: 50px 0 0 0;
       width: 343px;
-      height: 150px;
       &-label {
         display: inline;
         font-weight: bold;
@@ -83,7 +78,6 @@
     &--form3 {
       margin: 50px 0 0 0;
       width: 343px;
-      height: 75px;
       &-label {
         display: inline;
         font-weight: bold;
@@ -113,7 +107,6 @@
     &--form4 {
       margin: 50px 0 0 0;
       width: 343px;
-      height: 75px;
       &-label {
         display: inline;
         font-weight: bold;
@@ -141,9 +134,8 @@
       } 
     }
     &--form5 {
-      margin: 50px auto 0;
+      margin: 50px auto;
       width: 343px;
-      height: 287px;
       &-input {
         &-btn {
           background-color: #ea352d;
@@ -153,7 +145,7 @@
           width: 100%;
           line-height: 48px;
           font-size: 14px;
-          margin: 32px 0 0 0;
+          margin: 32px 0;
         }
       }
     }

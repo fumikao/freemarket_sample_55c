@@ -20,8 +20,11 @@
     }
     &--btn {
       background-color: #0099e8;
-      color: #fff;
       line-height: 40px;
+      display: block;
+      &-font {
+        color: #fff;
+      }
     }
   }
   &__inner {
