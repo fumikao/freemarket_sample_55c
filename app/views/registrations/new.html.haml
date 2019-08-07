@@ -13,10 +13,10 @@
         = link_to new1_registrations_path, class: "k_su_section__inner--mail-regi" do
           = fa_icon 'envelope', class: "k_su_icon"
           メールアドレスで登録する
-        = link_to user_facebook_omniauth_authorize_path, class: "k_su_section__inner--facebook-regi" do
+        = link_to user_facebook_omniauth_authorize_path, method: :post, class: "k_su_section__inner--facebook-regi" do
           = fa_icon 'facebook-square', class: "k_su_icon"
           Facebookで登録する
-        = link_to user_google_oauth2_omniauth_authorize_path, class: "k_su_section__inner--google-regi" do
+        = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "k_su_section__inner--google-regi" do
           = fa_icon 'google', class: "k_su_icon"
           Googleで登録する
 

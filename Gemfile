@@ -96,9 +96,7 @@ gem 'payjp'
 
 gem 'rails-ujs'
 
-gem 'omniauth'
-
-# gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-rails_csrf_protection'
 
 gem 'omniauth-google-oauth2'
 

@@ -14,10 +14,10 @@
         
       .k_su_section7__inner
         .k_su_section7__inner--form 
-          = link_to  user_facebook_omniauth_authorize_path, class: "k_su_section7__inner--form-facebook-regi" do
+          = link_to  user_facebook_omniauth_authorize_path, method: :post, class: "k_su_section7__inner--form-facebook-regi" do
             = fa_icon 'facebook-square', class: "k_su_icon"
             Facebookでログイン
-          = link_to  user_google_oauth2_omniauth_authorize_path, class: "k_su_section7__inner--form-google-regi" do
+          = link_to  user_google_oauth2_omniauth_authorize_path, method: :post, class: "k_su_section7__inner--form-google-regi" do
             = fa_icon 'google', class: "k_su_icon"
             Googleでログイン      
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|    
