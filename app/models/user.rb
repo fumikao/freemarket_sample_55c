@@ -6,11 +6,9 @@ class User < ApplicationRecord
            :omniauthable,omniauth_providers: [:facebook, :google_oauth2]
   
     has_one :address, dependent: :destroy
-    has_one :sns_credential, dependent: :destroy
     accepts_nested_attributes_for :address
     has_many :items, dependent: :destroy
     has_many :receipts, dependent: :destroy
-
     # has_many :likes, dependent: :destroy
     # has_many :messages, dependent: :destroy
     # has_many :evaluations, dependent: :destroy
