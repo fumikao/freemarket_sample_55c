@@ -38,29 +38,41 @@
               ニックネーム
             .k_su_section__inner--form-span
               必須
-            = f.text_field :nickname, class: "k_su_section__inner--form-input", placeholder: "例）メルカリ太郎"
+            = f.text_field :nickname, class: "k_su_section__inner--form-input k_form", placeholder: "例）メルカリ太郎"
+            .error_zone
+              %p.error_message
+                = @user.errors.full_messages_for(:nickname)[0]
             
           .k_su_section__inner--form2
             .k_su_section__inner--form2-label
               メールアドレス
             .k_su_section__inner--form2-span
               必須
-            = f.email_field :email, class: "k_su_section__inner--form2-input", placeholder: "PC・携帯どちらでも可"
-            
+            = f.email_field :email, class: "k_su_section__inner--form2-input k_form", placeholder: "PC・携帯どちらでも可"
+            .error_zone
+              %p.error_message
+                = @user.errors.full_messages_for(:email)[0]
+
           .k_su_section__inner--form2
             .k_su_section__inner--form2-label
               パスワード
             .k_su_section__inner--form2-span
               必須
-            = f.password_field :password, autocomplete: "new-password", class: "k_su_section__inner--form2-input", placeholder: "6文字以上"
-            
+            = f.password_field :password, autocomplete: "new-password", class: "k_su_section__inner--form2-input k_form", placeholder: "6文字以上"
+            .error_zone
+              %p.error_message
+                = @user.errors.full_messages_for(:password)[0]
+
           .k_su_section__inner--form2
             .k_su_section__inner--form2-label
               パスワード（確認）
             .k_su_section__inner--form2-span
               必須
-            = f.password_field :password_confirmation, autocomplete: "new-password", class: "k_su_section__inner--form2-input", placeholder: "6文字以上"
-            
+            = f.password_field :password_confirmation, autocomplete: "new-password", class: "k_su_section__inner--form2-input k_form", placeholder: "6文字以上"
+            .error_zone
+              %p.error_message
+                = @user.errors.full_messages_for(:password_confirmation)[0]
+
           .k_su_section__inner--form3
             .k_su_section__inner--form3-label
               本人確認
@@ -73,8 +85,13 @@
             .k_su_section__inner--form4-span
               必須
             .k_su_section__inner--form4-input
-              = f.text_field :lastname, class: "k_su_section__inner--form4-input-child", placeholder: "例) 山田"
-              = f.text_field :firstname, class: "k_su_section__inner--form4-input-child", placeholder: "例) 彩"
+              = f.text_field :lastname, class: "k_su_section__inner--form4-input-child k_form", placeholder: "例) 山田"
+              = f.text_field :firstname, class: "k_su_section__inner--form4-input-child k_form", placeholder: "例) 彩"
+            .error_zone
+              %p.error_message
+                = @user.errors.full_messages_for(:lastname)[0]
+              %p.error_message
+                = @user.errors.full_messages_for(:firstname)[0]
               
           .k_su_section__inner--form4
             .k_su_section__inner--form4-label
@@ -82,16 +99,24 @@
             .k_su_section__inner--form4-span
               必須
             .k_su_section__inner--form4-input
-              = f.text_field :lastname_kana, class: "k_su_section__inner--form4-input-child", placeholder: "例) ヤマダ"
-              = f.text_field :firstname_kana, class: "k_su_section__inner--form4-input-child", placeholder: "例) アヤ"
-            
+              = f.text_field :lastname_kana, class: "k_su_section__inner--form4-input-child  k_form", placeholder: "例) ヤマダ"
+              = f.text_field :firstname_kana, class: "k_su_section__inner--form4-input-child k_form", placeholder: "例) アヤ"
+            .error_zone
+              %p.error_message
+                = @user.errors.full_messages_for(:lastname_kana)[0]
+              %p.error_message
+                = @user.errors.full_messages_for(:firstname_kana)[0]
+
           .k_su_section__inner--form5
             .k_su_section__inner--form5-label
               生年月日
             .k_su_section__inner--form5-span
               必須
             .k_su_section__inner--form5-input
-              = f.date_field :birthday
+              = f.date_field :birthday, class: "k_form"
+            .error_zone
+              %p.error_message 
+                = @user.errors.full_messages_for(:birthday)[0]
               -# %input{class: "k_su_section__inner--form5-input-child", placeholder: "--"}
               -# %p.k_su_date 年
               -# %input{class: "k_su_section__inner--form5-input-child", placeholder: "--"}

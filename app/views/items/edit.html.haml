@@ -25,7 +25,7 @@
                   .o_image-label1
                     = image.label :image do
                       .o_file-field
-                        = image.file_field :image, multiple: true, name: "images[images][]"
+                        = image.file_field :image, multiple: true, name: "images[images][]", class: "input-image"
                       .k_ir_section__inner--form-input
                         .k_ir_section__inner--form-input-content 
                           %p
@@ -36,11 +36,13 @@
                   .o_image-label2
                     = image.label :image do
                       .o_file-field
-                        = image.file_field :image, multiple: true, name: "images[images][]"
+                        = image.file_field :image, multiple: true, name: "images[images][]", class: "input-image"
                       .k_ir_section__inner--form-input
                         .k_ir_section__inner--form-input-content 
                           %p
                             クリックしてファイルをアップロード
+              .error_zone
+                %p.error_image
 
           .k_ir_section__inner--form2
             .k_ir_section__inner--form2-label
@@ -48,11 +50,15 @@
             .k_ir_section__inner--form2-span
               必須
             = f.text_field :name, class: "k_ir_section__inner--form2-input", placeholder: "商品名（必須40文字まで）"
+            .error_zone
+              %p.error_name
             .k_ir_section__inner--form2-label
               商品の説明
             .k_ir_section__inner--form2-span
               必須
             = f.text_area :description, class: "k_ir_section__inner--form2-textarea", row: '3', placeholder: '商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年度に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
+            .error_zone
+              %p.error_descriptionription
 
           .k_ir_section__inner--form3
             .k_ir_section__inner--form3-left
@@ -62,14 +68,27 @@
                 カテゴリー
               .k_ir_section__inner--form3-right-span
                 必須
-              = f.collection_select :category_id, @categories, :id, :name, {prompt: '---'}, class: "k_ir_section__inner--form3-right-select-category", id: "category_parent"
-              %select.k_ir_section__inner--form3-right-select-category#category_children
-              %select.k_ir_section__inner--form3-right-select-category#category_grandchildren
+              %select.k_ir_section__inner--form3-right-select-category#category_parent
+              .display
+                %select.k_ir_section__inner--form3-right-select-category#category_children
+              .display
+                %select.k_ir_section__inner--form3-right-select-category#category_grandchildren
+              .error_zone
+                %p.error_category
+              .display-brand
+                .k_ir_section__inner--form3-right-label
+                  ブランド
+                .k_ir_section__inner--form3-right-span-gray
+                  任意
+                %input.k_ir_section__inner--form3-right-select#brand
+                %ul#brand-result.display_none
               .k_ir_section__inner--form3-right-label
                 商品の状態
               .k_ir_section__inner--form3-right-span
                 必須
               = f.select :condition, Item.conditions.keys, {prompt: '---'}, class: "k_ir_section__inner--form3-right-select"
+              .error_zone
+                %p.error_condition
 
           .k_ir_section__inner--form3.k_ir_section__inner--form4
             .k_ir_section__inner--form3-left
@@ -81,21 +100,29 @@
               .k_ir_section__inner--form3-right-span
                 必須
               = f.select :shipping_fee, Item.shipping_fees.keys, {prompt: '---'}, class: "k_ir_section__inner--form3-right-select", id: "shipping_fee"
+              .error_zone
+                %p.error_shipping_fee
               .k_ir_section__inner--form3-right-label
                 配送の方法
               .k_ir_section__inner--form3-right-span
                 必須
               = f.select :shipping_method, Item.shipping_methods.keys, {prompt: '---'}, class: "k_ir_section__inner--form3-right-select", id: "shipping_method"
+              .error_zone
+                %p.error_shipping_method
               .k_ir_section__inner--form3-right-label
                 発送元の地域
               .k_ir_section__inner--form3-right-span
                 必須
               = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: '---'}
+              .error_zone
+                %p.error_prefecture_id
               .k_ir_section__inner--form3-right-label
                 発送までの日数
               .k_ir_section__inner--form3-right-span
                 必須
               = f.select :shipping_date, Item.shipping_dates.keys, {prompt: '---'}, class: "k_ir_section__inner--form3-right-select"
+              .error_zone
+                %p.error_shipping_date
 
           .k_ir_section__inner--form5
             .k_ir_section__inner--form5-left
@@ -103,22 +130,26 @@
               = fa_icon 'question-circle', class: 'k_ir_icon'
             .k_ir_section__inner--form5-right
               .k_ir_right__content
-                .k_ir_right__content--left
-                  .k_ir_right__content--left-label
-                    価格
-                  .k_ir_right__content--left-span
-                    必須
-                .k_ir_right__content--right
-                  .k_ir_right__content--right-price
-                    ¥
-                    = f.text_field :price, class: "k_ir_right__content--right-price-input", id: "sell-price", placeholder: '例）300'
-              .k_ir_right__content
+                .k_ir_right__content--box
+                  .k_ir_right__content--box--content
+                    .k_ir_right__content--left
+                      .k_ir_right__content--left-label
+                        価格
+                      .k_ir_right__content--left-span
+                        必須
+                    .k_ir_right__content--right
+                      .k_ir_right__content--right-price
+                        ¥
+                        = f.text_field :price, class: "k_ir_right__content--right-price-input", id: "sell-price", placeholder: '例）300'
+                  .error_zone
+                    %p.error_price
+              .k_ir_right__content--price
                 .k_ir_right__content--left
                   販売手数料（10%）
                 .k_ir_right__content--right#mercari_fee
                   - mercari_fee = (@item.price * 0.1).floor
                   = "¥#{mercari_fee.to_s(:delimited)}"
-              .k_ir_right__content.k_ir_no_border
+              .k_ir_right__content--price.k_ir_no_border
                 .k_ir_right__content--left
                   .k_ir_right__content--left-label
                     販売利益

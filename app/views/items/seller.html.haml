@@ -1,6 +1,7 @@
 = render 'layouts/header'
 - breadcrumb :selling_items_edit, @item
 = render 'users/top_column'
+= render 'layouts/flash'
 .o_detail-container
   .o_detail-field
     .o_item
@@ -35,19 +36,19 @@
               %th カテゴリー
               %td
                 .td-category
-                  = link_to "メンズ", "#"
+                  = link_to @category.root.name, "#"
                 .td-category
                   = link_to "#" do
                     = fa_icon 'chevron-right'
-                    アクセサリー
+                    = @category.parent.name
                 .td-category
                   = link_to "#" do
                     = fa_icon 'chevron-right'
-                    ネックレス
+                    = @category.name
             %tr
               %th ブランド
               %td
-                = link_to "ルイ ヴィトン", "#"
+                = link_to @brand.name if @item.brand_id 
             %tr
               %th 商品の状態
               %td
@@ -55,10 +56,11 @@
             %tr
               %th 配送料の負担
               %td
-                =@item.shipping_fee
+                = @item.shipping_fee
             %tr
               %th 配送の方法
-              %td 普通郵便(定形、定形外)
+              %td
+                = @item.shipping_method
             %tr
               %th 配送元地域
               %td
@@ -74,7 +76,10 @@
         %span.price-tax
           (税込)
         %span.price-fee
+        - if @item.shipping_fee == "送料込み(出品者負担)"
           送料込み
+        - else
+          着払い
       .o_item__description
         %p
           = simple_format(@item.description)
@@ -82,9 +87,7 @@
     .o_item__seller
       = link_to "商品の編集", edit_item_path(@item), class: "o_item__editbtn"
       %p or
-      = form_for @item do |f|
-        = f.hidden_field :status
-        = f.submit "出品を一旦停止する", class: "o_item__editbtn--gray"
+      = link_to "出品を一旦停止する", "#", class: "o_item__editbtn--gray"
       = link_to "この商品を削除する", item_path(@item), method: :delete, class: "o_item__editbtn--gray"
 
       

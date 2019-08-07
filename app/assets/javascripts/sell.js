@@ -161,7 +161,7 @@ $(function() {
       processData: false
     })
     .done(function(){
-      location.href = `/`
+      location.href = '/'
     })
     .fail(function() {
     })

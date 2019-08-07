@@ -76,9 +76,9 @@ ActiveRecord::Schema.define(version: 2019_08_02_075955) do
   end
 
   create_table "receipts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "item_id", null: false
-    t.bigint "buyer_id", null: false
-    t.bigint "seller_id", null: false
+    t.bigint "item_id"
+    t.bigint "buyer_id"
+    t.bigint "seller_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["buyer_id"], name: "index_receipts_on_buyer_id"
