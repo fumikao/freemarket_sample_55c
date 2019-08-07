@@ -1,0 +1,22 @@
+ja:
+  activerecord:
+    models:
+      user: "ユーザー"
+      address: "住所"
+    attributes:
+      user:
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード（確認）"
+        nickname: "ニックネーム"
+        firstname: "名"
+        lastname: "姓"
+        firstname_kana: "名カナ"
+        lastname_kana: "姓カナ"
+        birthday: "誕生日"
+        tel: "電話番号"
+      address:
+        postal_code: "郵便番号"
+        prefecture_id: "都道府県"
+        city: "市区町村"
+        address_number: "番地"

@@ -1,7 +1,10 @@
 = render 'layouts/header'
+= render 'layouts/flash'
 .o_white
   .o_top-image
-    = image_tag("https://www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?891577966", height: "400px")
+    = image_tag("https://www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?891577966")
+    = image_tag("https://www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?891577966")
+    = image_tag("https://www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?891577966")
   .o_pickup-container
   %h2.o_pickup-head
     ピックアップカテゴリ
@@ -15,7 +18,7 @@
           = link_to "#" do
             .o_topitems-box__content
               .o_topitems
-                = render partial: 'item', collection: @items
+                = render partial: 'item', collection: @ladies_items
           .o_topitems-box__view-all
             = link_to "すべての商品を見る", "#"
 
@@ -26,7 +29,7 @@
           = link_to "#" do
             .o_topitems-box__content
               .o_topitems
-                = render partial: 'item', collection: @items
+                = render partial: 'item', collection: @mens_items
           .o_topitems-box__view-all
             = link_to "すべての商品を見る", "#"
 
@@ -37,7 +40,7 @@
           = link_to "#" do
             .o_topitems-box__content
               .o_topitems
-                = render partial: 'item', collection: @items
+                = render partial: 'item', collection: @baby_items
           .o_topitems-box__view-all
             = link_to "すべての商品を見る", "#"
 
@@ -48,7 +51,7 @@
           = link_to "#" do
             .o_topitems-box__content
               .o_topitems
-                = render partial: 'item', collection: @items
+                = render partial: 'item', collection: @cosme_items
           .o_topitems-box__view-all
             = link_to "すべての商品を見る", "#"
 
@@ -65,7 +68,7 @@
           = link_to "#" do
             .o_topitems-box__content
               .o_topitems
-                = render partial: 'item', collection: @items
+                = render partial: 'item', collection: @chanel_items
           .o_topitems-box__view-all
             = link_to "すべての商品を見る", "#"      
 
@@ -76,7 +79,7 @@
           = link_to "#" do
             .o_topitems-box__content
               .o_topitems
-                = render partial: 'item', collection: @items
+                = render partial: 'item', collection: @vuitton_items
           .o_topitems-box__view-all
             = link_to "すべての商品を見る", "#"      
 
@@ -87,7 +90,7 @@
           = link_to "#" do
             .o_topitems-box__content
               .o_topitems
-                = render partial: 'item', collection: @items
+                = render partial: 'item', collection: @sup_items
           .o_topitems-box__view-all
             = link_to "すべての商品を見る", "#"      
 
@@ -98,7 +101,7 @@
           = link_to "#" do
             .o_topitems-box__content
               .o_topitems
-                = render partial: 'item', collection: @items
+                = render partial: 'item', collection: @nike_items
           .o_topitems-box__view-all
             = link_to "すべての商品を見る", "#"      
 

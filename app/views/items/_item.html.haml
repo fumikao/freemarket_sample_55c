@@ -1,7 +1,9 @@
-
 .o_topitem
   = link_to item_path(item.id) do
-    =image_tag item.images.first.image.to_s , height: "213px" , width: "213px"
+    .o_item--image
+      =image_tag item.images.first.image.to_s , height: "213px" , width: "213px", class: "o_item--image"
+      - if item.status == "取引中"
+        .o_item-soldbadge
     .o_topitem__body
       .o_topitem__body--title
         = item.name
@@ -11,4 +13,4 @@
           = item.price.to_s(:delimited)
         .o_topitem__body--bottom--like
           = fa_icon 'heart', class: "o_icon-heart"
-          45
+          = item.likes.count

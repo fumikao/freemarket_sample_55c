@@ -94,7 +94,7 @@ $(window).on('load', function(){
       
       reader.readAsDataURL(file);
       images.push(img);
-      
+
       if (images.length <= 4) {
         $('#preview1').text('');
         $.each(images, function(i, image){
@@ -116,8 +116,15 @@ $(window).on('load', function(){
         imagezone2.css({
           display: "block"
         })
-        $('#preview2').text('')
       } else {
+        var firstrow_images = images.slice(0, 5)
+        $('#preview1').text('')
+        $.each(firstrow_images, function(i, image) {
+          image.attr('data-image', i)
+          $('#preview1').append(image)
+        })
+
+        $('#preview2').text('')
         var secondrow_images = images.slice(5)
         $.each(secondrow_images, function(i, image){
           image.attr('data-image', i + 5);
@@ -236,6 +243,14 @@ $(window).on('load', function(){
         $.each(new_image_files, function(i, file){
           formData.append("images[images][]", file)
         })
+      }
+
+      var grandchild_id = $('#category_grandchildren').val()
+      formData.append("category_id", grandchild_id)
+
+      var brand_name = $('#brand').val()
+      if (brand_name != " ") {
+        formData.append("brand_name", brand_name)
       }
 
       $.ajax({

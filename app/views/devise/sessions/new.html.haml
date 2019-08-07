@@ -9,8 +9,10 @@
       .k_su_section7__header
         %p.k_su_section7__header--content
           アカウントをお持ちでない方はこちら
-        .k_su_section7__header--btn
-          新規会員登録
+        = link_to  new_registration_path, class: "k_su_section7__header--btn" do
+          .k_su_section7__header--btn-font 
+            新規会員登録
+          
         
       .k_su_section7__inner
         .k_su_section7__inner--form 
